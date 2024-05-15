@@ -25,7 +25,7 @@ app.use(cookieParser())
 
 app.use(
     cors({
-      origin: ["https://authjwt-frontend.onrender.com"],
+      origin: ["https://auth-jwt-puce.vercel.app","https://authjwt-frontend.onrender.com"],
       methods: ["GET", "POST", "PUT", "DELETE"],
       credentials: true,
     })
