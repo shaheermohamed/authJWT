@@ -45,6 +45,7 @@ const Login = () => {
           //   setUser({ ...data });
           message.success(message1);
           setTimeout(() => {
+            console.log('redirected to /')
             navigate("/");
           }, 1000);
         } else {

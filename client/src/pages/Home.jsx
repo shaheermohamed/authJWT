@@ -10,6 +10,7 @@ const Home = () => {
   const [username, setUsername] = useState("");
   useEffect(() => {
     const verifyCookie = async () => {
+      console.log("cookies.token:",cookies.token)
       if (!cookies.token) {
         navigate("/login");
       }
@@ -20,7 +21,7 @@ const Home = () => {
         { withCredentials: true }
       );
       const { success, message: message1, user } = data;
-      console.log("data:", data);
+      console.log("verifyCookie data:", data);
       setUsername(user);
       return success
         ? message.success(`Hello ${user}`)
@@ -30,6 +31,7 @@ const Home = () => {
   }, [cookies, navigate, removeCookie]);
   const Logout = () => {
     removeCookie("token");
+    console.log("called removeCookie fun")
     navigate("/login");
   };
 
