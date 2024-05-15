@@ -34,11 +34,16 @@ const Signup = () => {
   //form submit function
   const handleClickRegister = (data) => {
     axios
-      .post("http://localhost:4000/auth/signup", data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .post(
+        // "http://localhost:4000/auth/signup"
+        " https://authjwt-backend.onrender.com/auth/signup",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
         console.log("response:", response);
         const { success, message: message1 } = response.data;
